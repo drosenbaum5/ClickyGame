@@ -8,12 +8,28 @@ class App extends Component {
 
     state = {
       score: 0,
-      topScore: 0  
+      topScore: 0,
+      clicked: []  
     }
 
-    updateScore = () => {
-     this.setState({score: this.state.score + 1})
+    updateScore = (id) => {
+      console.log(id)
+
+      this.state.clicked.includes(id)
+      
+      if(this.state.clicked.includes(id)) {
+        
+        this.setState({score: 0})
+      } else {
+      
+            this.setState({clicked: [...this.state.clicked, id]})
+            this.setState({score: this.state.score + 1})
     }
+
+    }
+
+
+    
 
 
   

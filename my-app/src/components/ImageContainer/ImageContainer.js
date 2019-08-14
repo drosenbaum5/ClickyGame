@@ -9,9 +9,10 @@ function ImageContainer (props) {
      {
        images.map(image => {
            return (
+          
            <div className = "card">  
             <div className="img-container" key = {image.id}>
-             <img onClick = {props.updateScore} src = {image.image}></img>   
+             <img onClick = {()=>props.updateScore(image.id)} src = {image.image}></img>   
             </div>
            </div>
 
